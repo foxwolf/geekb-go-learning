@@ -1,8 +1,8 @@
 package client_test
 
 import (
+	"geekb-go-learn/src/package/series"
 	"testing"
-	"github.com/foxwolf/geekb-go-learning/package/series"
 )
 
 func TestPackage(t *testing.T) {
