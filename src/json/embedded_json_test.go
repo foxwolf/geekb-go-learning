@@ -8,7 +8,7 @@ import (
 
 var jsonStr = `{
 	"basic_info":{
-	  	"name":"Mike",
+	  "name":"Mike",
 		"age":30
 	},
 	"job_info":{
@@ -18,12 +18,15 @@ var jsonStr = `{
 
 func TestEmbeddedJson(t *testing.T) {
 	e := new(Employee)
-	err :=json.Unmarshal([]byte(jsonStr), e)
+	err := json.Unmarshal([]byte(jsonStr), e)
 	if err != nil {
 		t.Error(err)
 	}
 	fmt.Println(*e)
 	if v, err := json.Marshal(e); err == nil {
+		if string(v) == string(jsonStr) {
+			fmt.Println("equal!")
+		}
 		fmt.Println(string(v))
 	} else {
 		t.Error(err)
