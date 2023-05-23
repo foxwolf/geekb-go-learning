@@ -15,9 +15,11 @@ func init() {
 		TimestampFormat: time.RFC3339Nano,
 	})
 
+	// var cfgFils
+
 	cobra.OnInitialize()
 }
 
 func TestDemo(t *testing.T) {
-
+	fmt.Println("ok")
 }
